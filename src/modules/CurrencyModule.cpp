@@ -259,7 +259,7 @@ CurrencyModule::CurrencyModule(UmikoBot* client) : Module("currency", true), m_c
 		if (getUserData(channel.guildId(), message.author().id()).isDailyClaimed)
 		{
 			QString time = utility::StringifyMilliseconds(m_timer.remainingTime());
-			QString desc = "**You have already claimed your daily credits.**\nCome back after `" + time + "` to get more rich!";
+			QString desc = "**You have already claimed your daily credits.**\nCome back after `" + time + "` to get richer!";
 
 			client.createMessage(message.channelId(), desc);
 		}
