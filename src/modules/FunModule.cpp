@@ -634,7 +634,7 @@ FunModule::FunModule(UmikoBot* client) : Module("funutil", true), m_memeChannel(
 	{
 		QStringList args = message.content().split(' ');
 
-		::Permissions::ContainsPermission(client, channel.guildId(), message.author().id(), CommandPermission::ADMIN, [this, args, message, channel](bool result) 
+		::Permissions::ContainsPermission(client, channel.guildId(), message.author().id(), CommandPermission::MODERATOR, [this, args, message, channel](bool result) 
 		{
 			GuildSetting* setting = &GuildSettings::GetGuildSetting(channel.guildId());
 			if (!result) 
@@ -675,7 +675,7 @@ FunModule::FunModule(UmikoBot* client) : Module("funutil", true), m_memeChannel(
 	{
 		QStringList args = message.content().split(' ');
 
-		::Permissions::ContainsPermission(client, channel.guildId(), message.author().id(), CommandPermission::ADMIN, [this, args, message, channel](bool result) 
+		::Permissions::ContainsPermission(client, channel.guildId(), message.author().id(), CommandPermission::MODERATOR, [this, args, message, channel](bool result) 
 		{
 			GuildSetting* setting = &GuildSettings::GetGuildSetting(channel.guildId());
 			if (!result) 

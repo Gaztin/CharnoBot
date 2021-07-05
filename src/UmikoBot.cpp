@@ -236,7 +236,7 @@ UmikoBot::UmikoBot(QObject* parent)
 		}
 		else
 		{
-			::Permissions::ContainsPermission(*this, channel.guildId(), message.author().id(), CommandPermission::ADMIN,
+			::Permissions::ContainsPermission(*this, channel.guildId(), message.author().id(), CommandPermission::MODERATOR,
 				[this, prefix, message, channel](bool result)
 			{
 				QString description = "";
@@ -702,7 +702,7 @@ QList<Command> UmikoBot::GetAllCommands()
 
 void UmikoBot::VerifyAndRunAdminCmd(Client& client, const Message& message, const Channel& channel, unsigned int requiredNumberOfArgs, const QStringList& args, bool argumentShouldBeANumber, std::function<void()> callback)
 {
-	::Permissions::ContainsPermission(client, channel.guildId(), message.author().id(), CommandPermission::ADMIN, [args, &client, message, channel, requiredNumberOfArgs, argumentShouldBeANumber, callback](bool result)
+	::Permissions::ContainsPermission(client, channel.guildId(), message.author().id(), CommandPermission::MODERATOR, [args, &client, message, channel, requiredNumberOfArgs, argumentShouldBeANumber, callback](bool result)
 	{
 		if (!result)
 		{
@@ -776,7 +776,11 @@ void UmikoBot::Load()
 		Command(USER_MODULE_ACHIEVEMENTS),
 
 		Command(TIMEZONE_MODULE_TIMEOFFSET),
+
 		Command(MODERATION_INVITATION_TOGGLE),
+		Command(MODERATION_WARN),
+		Command(MODERATION_WARNINGS),
+		Command(MODERATION_WARNINGS_ALL),
 
 		Command(CURRENCY_WALLET),
 		Command(CURRENCY_DAILY),

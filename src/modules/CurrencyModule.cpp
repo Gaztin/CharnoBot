@@ -1373,7 +1373,7 @@ CurrencyModule::CurrencyModule(UmikoBot* client) : Module("currency", true), m_c
 		//! Doesn't use VerifyAndRunCmd because that currently 
 		//! doesn't handle cases where we need at least n arguments.
 
-		::Permissions::ContainsPermission(client, channel.guildId(), message.author().id(), CommandPermission::ADMIN,
+		::Permissions::ContainsPermission(client, channel.guildId(), message.author().id(), CommandPermission::MODERATOR,
 			[this, args, &client, message, channel](bool result) 
 			{
 			

@@ -11,6 +11,7 @@ namespace CommandPermission
 	enum 
 	{
 		ADMIN = Discord::Permissions::ADMINISTRATOR | Discord::Permissions::MANAGE_GUILD,
+		MODERATOR = ADMIN | Discord::Permissions::MANAGE_MESSAGES | Discord::Permissions::KICK_MEMBERS | Discord::Permissions::BAN_MEMBERS,
 	};
 };
 

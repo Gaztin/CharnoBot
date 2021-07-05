@@ -107,6 +107,24 @@
 		"additional": "**NOTE:** Admins can send server links even if the invitation is turned on",
 		"admin": true
 	},
+	"MODERATION_WARN": {
+		"brief": "Warns a user.",
+		"usage": "warn <Person> [message]",
+		"additional": "",
+		"admin": true
+	},
+	"MODERATION_WARNINGS": {
+		"brief": "Displays active warnings for a user.",
+		"usage": "warnings <Person>",
+		"additional": "To see all warnings, use `!warnings-all`",
+		"admin": true
+	},
+	"MODERATION_WARNINGS_ALL": {
+		"brief": "Displays all warnings for a user.",
+		"usage": "warnings-all <Person>",
+		"additional": "This shows all warnings, expired and active. To see only active warnings, use `!warnings`",
+		"admin": true
+	},
 	"CURRENCY_WALLET": {
 		"brief": "Shows the user's wallet which contains information related to the user's currency.",
 		"usage": "wallet [name/@mention/id]",
